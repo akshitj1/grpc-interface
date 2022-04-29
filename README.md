@@ -1,4 +1,4 @@
-# Api contracts for Dealshare Microservices
+# Api contracts for gRpc Microservices
 
 This is a central library for all Api contracts between microservices.
 
@@ -16,5 +16,3 @@ In development phase:
 ```shell
 ./gradlew publishToMavenLocal
 ```
-
-Demo Server implementing contract: [grpc-server](https://bitbucket.org/merabolabs/grpc-server/src/master/)
