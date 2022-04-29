@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package org.akshit.grpcinterface.hello;
+
+service HelloService{
+  rpc SayHello(Greeter) returns (Greeting){}
+}
+
+message Greeter{
+  string name = 1;
+}
+
+message Greeting{
+  string message = 1;
+}
