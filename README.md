@@ -1,5 +1,7 @@
 # Api contracts for gRpc Microservices
 
+Part of blog: [Calling microservice as simple as calling function: gRPC](https://medium.com/@akshit.jain/calling-microservice-as-simple-as-calling-function-grpc-7bec48c2342f)
+
 This is a central library for all Api contracts between microservices.
 
 * The contracts are defined in `protobuf` format. 
