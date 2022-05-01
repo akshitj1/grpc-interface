@@ -16,3 +16,15 @@ In development phase:
 ```shell
 ./gradlew publishToMavenLocal
 ```
+
+### remote code artifactory
+
+```shell
+export CODEARTIFACT_AUTH_TOKEN=`\
+  aws codeartifact get-authorization-token \
+  --domain akshit \
+  --output text`
+
+
+./gradlew publish
+```

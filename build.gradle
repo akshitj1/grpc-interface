@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        contractVersion = '1.0.0'
+        contractVersion = '1.0.1'
         protobufVersion = '3.19.1'
         protobufPluginVersion = '0.8.18'
         grpcVersion = '1.42.2'
@@ -10,6 +10,7 @@ buildscript {
 
 plugins {
     id 'java-library'
+    // for remote library publish
     id 'maven-publish'
     id 'com.google.protobuf' version "${protobufPluginVersion}"
 }
@@ -54,6 +55,7 @@ protobuf {
     }
 }
 
+// only for remote library publish
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -61,6 +63,15 @@ publishing {
             artifactId = 'grpc-interface'
             version = "${contractVersion}"
             from components.java
+        }
+    }
+    repositories {
+        maven {
+            url 'https://akshit-825194067279.d.codeartifact.ap-south-1.amazonaws.com/maven/grpc-interface/'
+            credentials {
+                username "aws"
+                password System.env.CODEARTIFACT_AUTH_TOKEN
+            }
         }
     }
 }
